@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-import abel, bente, donny, julian, esmee
+import abel, bente, donny, julian, julian_players, esmee
 
 app = Flask(__name__)
 CORS(app)
@@ -29,6 +29,11 @@ def donny_route():
 @app.route("/julian", methods=["GET", "POST"])
 def julian_route():
     result = julian.start()
+    return result
+
+@app.route("/julian/players", methods=["GET", "POST"])
+def julian_players_route():
+    result = julian_players.start()
     return result
 
 @app.route("/esmee", methods=["GET", "POST"])
