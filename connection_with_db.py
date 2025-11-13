@@ -11,7 +11,6 @@ def get_cursor():
     password= os.getenv("AZURE_MYSQL_PASSWORD"),
     database= os.getenv("AZURE_MYSQL_DATABASE")
   )
- 
   return myconn, myconn.cursor()
 
 myconn, mycursor = get_cursor()
