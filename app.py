@@ -24,7 +24,7 @@ def bente_route():
 @app.route("/donny", methods=["GET", "POST"])
 def donny_route():
     result = donny.start()
-    return result
+    return jsonify(result)
 
 @app.route("/julian", methods=["GET", "POST"])
 def julian_route():
