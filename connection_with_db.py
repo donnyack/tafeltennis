@@ -1,5 +1,8 @@
 import mysql.connector
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_cursor():
   myconn = mysql.connector.connect(
@@ -8,7 +11,6 @@ def get_cursor():
     password= os.getenv("AZURE_MYSQL_PASSWORD"),
     database= os.getenv("AZURE_MYSQL_DATABASE")
   )
- 
   return myconn, myconn.cursor()
 
 myconn, mycursor = get_cursor()
