@@ -1,5 +1,8 @@
 import mysql.connector
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_cursor():
   myconn = mysql.connector.connect(
